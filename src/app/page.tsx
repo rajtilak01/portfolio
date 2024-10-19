@@ -1,5 +1,4 @@
 import { HeroParallax } from "@/components/ui/HeroParallax";
-import HeroSection from "../components/HeroSection"
 import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { NavbarTop } from "@/components/Navbar";
