@@ -22,7 +22,7 @@ export const products = [
     title: "Music School",
     link: "https://musicschoolnext.netlify.app/",
     thumbnail:
-      "https://res.cloudinary.com/dcvo14v3g/image/upload/v1729344298/Portfolio/Music%20School.png",
+      "https://res.cloudinary.com/dcvo14v3g/image/upload/c_crop,ar_16:9/v1729344298/Portfolio/Music%20School.png",
   },
   {
     title: "LMS",

@@ -2,6 +2,7 @@ import { HeroParallax } from "@/components/ui/HeroParallax";
 import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { NavbarTop } from "@/components/Navbar";
+import { TimelineComponent } from "@/components/Timeline";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       {/* <HeroSection/> */}
       <NavbarTop/>
       <Hero/>
+      <TimelineComponent/>
     </main>
  );
 }
