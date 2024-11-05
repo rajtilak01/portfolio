@@ -14,9 +14,9 @@ export const HeroParallax = ({
   products,
 }: {
   products: {
-    title: string;
-    link: string;
-    thumbnail: string;
+    name: string;
+    deployedUrl: string;
+    imageUrl: string[];
   }[];
 }) => {
   const firstRow = products.slice(0, 3);
@@ -74,7 +74,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.name}
             />
           ))}
         </motion.div>
@@ -83,7 +83,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product.name}
             />
           ))}
         </motion.div>
@@ -92,7 +92,7 @@ export const HeroParallax = ({
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.name}
             />
           ))}
         </motion.div>
@@ -121,9 +121,9 @@ export const ProductCard = ({
   translate,
 }: {
   product: {
-    title: string;
-    link: string;
-    thumbnail: string;
+    name: string;
+    deployedUrl: string;
+    imageUrl: string[];
   };
   translate: MotionValue<number>;
 }) => {
@@ -135,24 +135,24 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      key={product.title}
+      key={product.name}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
       <Link
-        href={product.link}
+        href={product.deployedUrl}
         className="block group-hover/product:shadow-2xl "
       >
         <Image
-          src={product.thumbnail}
+          src={product.imageUrl[0] ?? '/default-image.png'}
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
+          alt={product.name}
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
+        {product.name}
       </h2>
     </motion.div>
   );

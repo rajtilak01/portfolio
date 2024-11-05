@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import Projects from "../../../models/projects"
+import { dbconnect } from "@/dbconfig/db";
 
 export async function GET(req: NextRequest) {
     try {
+
+        await dbconnect();
         const project = await Projects.find({});
 
         return NextResponse.json({

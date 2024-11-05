@@ -35,7 +35,8 @@ const ProjectForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('/api/post-project', formData);
+      const result = await axios.post('/api/post-project', formData);
+      console.log("resulting coming after saving the data", result);
       alert('Project added successfully!');
     } catch (error) {
       alert('An error occurred while adding the project.');
@@ -44,7 +45,7 @@ const ProjectForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-md space-y-4">
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-gray-800 shadow-md rounded-md space-y-4">
       <div className="flex flex-col">
         <label htmlFor="name" className="text-gray-700 font-medium">Project Name</label>
         <input
@@ -54,7 +55,7 @@ const ProjectForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="mt-1 p-2 border rounded-md"
+          className="mt-1 p-2 border rounded-md text-black"
         />
       </div>
 
@@ -66,7 +67,7 @@ const ProjectForm = () => {
           value={formData.description}
           onChange={handleChange}
           required
-          className="mt-1 p-2 border rounded-md"
+          className="mt-1 p-2 border rounded-md text-black"
         />
       </div>
 
@@ -78,7 +79,7 @@ const ProjectForm = () => {
           id="deployedUrl"
           value={formData.deployedUrl}
           onChange={handleChange}
-          className="mt-1 p-2 border rounded-md"
+          className="mt-1 p-2 border rounded-md text-black"
         />
       </div>
 
@@ -91,7 +92,7 @@ const ProjectForm = () => {
             name="imageUrl"
             value={url}
             onChange={(e) => handleChange(e, index)}
-            className="p-2 border rounded-md"
+            className="p-2 border rounded-md text-black"
           />
         ))}
         <button
@@ -112,7 +113,7 @@ const ProjectForm = () => {
             name="tags"
             value={tag}
             onChange={(e) => handleChange(e, index)}
-            className="p-2 border rounded-md"
+            className="p-2 border rounded-md text-black"
           />
         ))}
         <button

@@ -1,14 +1,18 @@
+import { dbconnect } from "@/dbconfig/db";
 import Projects from "@/models/projects";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const { name, description, imageUrl, deployedUrl } = await req.json();
+
+        await dbconnect();
+        const { name, description, imageUrl, deployedUrl, tags } = await req.json();
         const project = new Projects({
             name: name,
             description: description,
             deployedUrl: deployedUrl,
             imageUrl: imageUrl,
+            tags: tags,
         });
 
         await project.save();
