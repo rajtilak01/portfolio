@@ -30,4 +30,10 @@ export const products = [
     thumbnail:
       "https://res.cloudinary.com/dcvo14v3g/image/upload/v1729344299/Portfolio/TheLMS.png",
   },
+  {
+    title: "Golf Club",
+    link: "https://rajtilak16.github.io/golfClub/",
+    thumbnail:
+      "https://res.cloudinary.com/dcvo14v3g/image/upload/v1730827072/GolfClub_vebrhf.png",
+  },
 ];
