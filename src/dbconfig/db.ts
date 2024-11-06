@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import getEnv from '../../envLoader';
 
-
 const env = getEnv();
 export async function dbconnect() {
     try {

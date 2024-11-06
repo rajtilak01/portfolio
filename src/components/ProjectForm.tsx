@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const ProjectForm = () => {
   const [formData, setFormData] = useState({
@@ -37,14 +39,27 @@ const ProjectForm = () => {
     try {
       const result = await axios.post('/api/post-project', formData);
       console.log("resulting coming after saving the data", result);
-      alert('Project added successfully!');
+      // alert('Project added successfully!');
+      toast.success('Project added successfully!', {
+        position: "top-right",
+        autoClose: 2000,
+        theme: "colored"
+
+      })
     } catch (error) {
-      alert('An error occurred while adding the project.');
+      toast.error('An error occurred while adding the project.',{
+        position: "top-right",
+        autoClose: 2000,
+        theme: "colored"
+      });
       console.error(error);
     }
   };
 
   return (
+    <div>
+      <ToastContainer/>
+      <div className=' text-2xl text-center m-4'>Submit Project info here</div>
     <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-6 bg-gray-800 shadow-md rounded-md space-y-4">
       <div className="flex flex-col">
         <label htmlFor="name" className="text-gray-700 font-medium">Project Name</label>
@@ -132,6 +147,7 @@ const ProjectForm = () => {
         Submit Project
       </button>
     </form>
+    </div>
   );
 };
 

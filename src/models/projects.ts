@@ -1,15 +1,13 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-// Define a TypeScript interface for the project schema
 export interface IProject extends Document {
   name: string;
-  imageUrl?: string[]; // Optional, as it's not required
+  imageUrl?: string[];
   description: string;
-  deployedUrl?: string; // Optional
-  tags?: string[]; // Optional
+  deployedUrl?: string; 
+  tags?: string[];
 }
 
-// Define the schema
 const projectSchema: Schema = new Schema({
   name: {
     type: String,
@@ -34,7 +32,7 @@ const projectSchema: Schema = new Schema({
   ],
 });
 
-// Export the Mongoose model with the IProject interface
-const Project = mongoose.models.projects || mongoose.model<IProject>("projects", projectSchema);
-// export default mongoose.model<IProject>("Projects", projectSchema);
+
+const Project = mongoose.models.Project || mongoose.model<IProject>("Project", projectSchema);
+
 export default Project
