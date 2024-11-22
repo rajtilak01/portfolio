@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,8 +16,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
 import axios from "axios";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 function ContactMe() {
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const { toast } = useToast();
+
   const formSchema = z.object({
     name: z
       .string()
@@ -39,9 +45,15 @@ function ContactMe() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
     const result = await axios.post("/api/send-mail", values);
-    // console.log("form data getting from the form", values);
-    console.log(values);
+    setIsSubmitting(false);
+    form.reset();
+
+    toast({
+      title: "Message sent successfully",
+      description: "Will reach out to you soon"
+    })
   }
 
   return (
@@ -105,7 +117,14 @@ function ContactMe() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+            {!isSubmitting ? (
+              <Button type="submit">Submit</Button>
+            ) : (
+              <Button disabled>
+                <Loader2 className="animate-spin" />
+                Please wait
+              </Button>
+            )}
           </form>
         </Form>
       </div>
