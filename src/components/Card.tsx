@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { HoverEffect } from "../components/ui/card-hover-effect";
 import axios from "axios";
 
-export function CardHoverEffectDemo() {
+export function Projects() {
   const [project, setProject] = useState<{name: string, description: string, deployedUrl: string}[]>([])
   useEffect(() => {
     const func = async () => {
@@ -15,6 +15,7 @@ export function CardHoverEffectDemo() {
   
   return (
     <div className="max-w-5xl mx-auto px-8">
+      <div className="flex justify-center font-bold text-4xl">Projects</div>
       <HoverEffect items={project} />
     </div>
   );

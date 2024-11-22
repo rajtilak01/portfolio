@@ -1,12 +1,12 @@
 import { HeroParallax } from "@/components/ui/HeroParallax";
-import Image from "next/image";
 import { Hero } from "@/components/Hero";
 import { NavbarTop } from "@/components/Navbar";
 import { TimelineComponent } from "@/components/Timeline";
-import { CardHoverEffectDemo } from "@/components/Card";
+import { Projects } from "@/components/Card";
 import ContactMe from "@/components/ContactMe";
 import Experience from "@/components/Experience";
 import { TechStack } from "@/components/TechStack";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -14,11 +14,12 @@ export default function Home() {
       {/* <HeroSection/> */}
       <NavbarTop/>
       <Hero/>
-      <CardHoverEffectDemo/>
+      <Projects/>
       {/* <TimelineComponent/> */}
       <Experience/>
       <TechStack/>
       <ContactMe/>
+      <Footer/>
     </main>
  );
 }
