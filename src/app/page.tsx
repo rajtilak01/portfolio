@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { NavbarTop } from "@/components/Navbar";
 import { TimelineComponent } from "@/components/Timeline";
 import { CardHoverEffectDemo } from "@/components/Card";
+import ContactMe from "@/components/ContactMe";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero/>
       {/* <TimelineComponent/> */}
       <CardHoverEffectDemo/>
+      <ContactMe/>
     </main>
  );
 }
