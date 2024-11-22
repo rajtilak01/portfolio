@@ -1,11 +1,7 @@
 import nodemailer from 'nodemailer';
 import { NextResponse, NextRequest } from 'next/server';
 
-export default async function handler(req : NextRequest) {
-  if (req.method !== 'POST') {
-    return NextResponse.json({ error: 'Method not allowed' }, {status: 405});
-  }
-
+export async function POST(req : NextRequest) {
   const body = await req.json();
   const { name, email, message } = body;
 
