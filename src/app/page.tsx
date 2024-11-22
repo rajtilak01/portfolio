@@ -6,6 +6,7 @@ import { TimelineComponent } from "@/components/Timeline";
 import { CardHoverEffectDemo } from "@/components/Card";
 import ContactMe from "@/components/ContactMe";
 import Experience from "@/components/Experience";
+import { TechStack } from "@/components/TechStack";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <CardHoverEffectDemo/>
       {/* <TimelineComponent/> */}
       <Experience/>
+      <TechStack/>
       <ContactMe/>
     </main>
  );
