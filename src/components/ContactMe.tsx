@@ -20,7 +20,7 @@ import axios from "axios";
 
 function ContactMe() {
   const formSchema = z.object({
-    fullName: z
+    name: z
       .string()
       .min(2, { message: "Min length 2 is required for description" }),
     email: z.string().email(),
@@ -32,7 +32,7 @@ function ContactMe() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: "",
+      name: "",
       email: "",
       message: "",
     },
@@ -57,10 +57,10 @@ function ContactMe() {
           >
             <FormField
               control={form.control}
-              name="fullName"
+              name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-bold text-xl">Fullname</FormLabel>
+                  <FormLabel className="font-bold text-xl">Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Your Name" {...field} />
                   </FormControl>
