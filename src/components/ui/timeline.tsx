@@ -86,7 +86,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           />
         </div>
       </div>
-      <button className="bg-red-500">Hey there</button>
       </div>
     </div>
   );

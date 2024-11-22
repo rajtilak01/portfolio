@@ -4,6 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+// Utility function to truncate description
+const truncateDescription = (description: string, wordLimit: number) => {
+    const words = description.split(' ');
+    return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : description;
+};
+
 export const HoverEffect = ({
   items,
   className,
@@ -51,7 +57,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <Cardname>{item.name}</Cardname>
-            <CardDescription>{item.description}</CardDescription>
+            <CardDescription>{truncateDescription(item.description, 25)}</CardDescription>
           </Card>
         </Link>
       ))}

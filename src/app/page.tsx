@@ -5,6 +5,7 @@ import { NavbarTop } from "@/components/Navbar";
 import { TimelineComponent } from "@/components/Timeline";
 import { CardHoverEffectDemo } from "@/components/Card";
 import ContactMe from "@/components/ContactMe";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
       {/* <HeroSection/> */}
       <NavbarTop/>
       <Hero/>
-      {/* <TimelineComponent/> */}
       <CardHoverEffectDemo/>
+      {/* <TimelineComponent/> */}
+      <Experience/>
       <ContactMe/>
     </main>
  );
