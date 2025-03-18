@@ -7,6 +7,24 @@ function Experience() {
       <div className="justify-center flex">
         <div className="max-w-4xl mx-auto">
           <div>
+            <div className="text-2xl font-bold underline">ASE Intern</div>
+            <div className="underline">Accenture</div>
+            <div>
+              <ul className="list-disc pl-5">
+                <li>
+                  Collaborated with experienced team members to analyze and
+                  visualize data, contributing to effective data-driven
+                  reporting for stakeholders.
+                </li>
+                <li>
+                  Utilized database systems and gained exposure to data
+                  analytics tools, including SQL, to enhance data quality and
+                  improve aggregation techniques as an ASE intern.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
             <div className="text-2xl font-bold underline">SDE Intern</div>
             <div className="underline">Redwine Digital</div>
             <div>
