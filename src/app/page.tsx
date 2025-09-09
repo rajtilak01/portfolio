@@ -7,6 +7,7 @@ import ContactMe from "@/components/ContactMe";
 import Experience from "@/components/Experience";
 import { TechStack } from "@/components/TechStack";
 import Footer from "@/components/Footer";
+import GitHubCalendarComponent from "@/components/GitHubCalendar";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       {/* <HeroSection/> */}
       <NavbarTop/>
       <Hero/>
+      <GitHubCalendarComponent/>
       <Projects/>
       {/* <TimelineComponent/> */}
       <Experience/>
