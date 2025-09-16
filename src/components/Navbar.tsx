@@ -22,7 +22,7 @@ function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>    
       <HoveredLink href="https://www.linkedin.com/in/rajtilak16/">LinkedIn</HoveredLink>
-      <HoveredLink href="https://github.com/rajtilak01">Github</HoveredLink>
+      <HoveredLink href="https://github.com/jujutsu-29">Github</HoveredLink>
       <HoveredLink href="https://leetcode.com/u/Rajtilak16/">Leetcode</HoveredLink>
       <HoveredLink href="https://drive.google.com/file/d/1s-Qy7mYKNiz9f98kFApqP-Du13m4gZq1/view?usp=sharing">Resume</HoveredLink>
         
